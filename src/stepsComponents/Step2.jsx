@@ -2,12 +2,14 @@ import { useState } from "react"
 
 export default function Step2({prevStep, gamePlans, formData, selectedPlan, errors2, validateStep2, duration, selectPlan, currentStep, setChecked, isChecked, nextStep}) {
     
-
-
+    
+    
     const planElements = gamePlans.map((plan, index) => {
+        console.log(plan.icon);
         return(
+            
             <button className={selectedPlan.name === plan.name ? "selected-plan" : ""}  onClick={() => selectPlan(plan.name, plan.cost)} key={index}>
-            <img src={plan.icon} alt="" />
+            <img src={plan.icon} alt="plan-img" />
             <div className="plan-details">
             <span className="plan-name"  >{plan.name}</span>
             <span className="pricing">{isChecked ? `$${plan.cost}/yr` : `$${plan.cost}/mo`}</span>

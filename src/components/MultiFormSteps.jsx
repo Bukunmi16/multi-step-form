@@ -5,6 +5,9 @@ import Step2 from "../stepsComponents/Step2"
 import Step3 from "../stepsComponents/Step3"
 import Step4 from "../stepsComponents/Step4"
 import Thanks from "../stepsComponents/Thanks"
+import arcadeImg from "../assets/icon-arcade.svg"
+import advancedImg from "../assets/icon-advanced.svg"
+import proImg from "../assets/icon-pro.svg"
 
 export default function MultiFormSteps() {
     
@@ -13,8 +16,8 @@ export default function MultiFormSteps() {
         email: "",
         number: "",
         plan: {
-            name: '',
-            cost: ''
+            name: "",
+            cost: ""
         },
         duration: "",
         addOns: []
@@ -33,10 +36,13 @@ export default function MultiFormSteps() {
             name: plan,
             cost:cost
         })
+        // setFormData((prev) => ({...prev, plan: selectPlan}))
         formData.plan.name = plan
-        formData.plan.cost = cost
+        formData.plan.cost = cost 
     }
 
+    console.log(formData);
+    
     // STEPS
     const [step, setSteps] = useState(1)
 
@@ -173,38 +179,41 @@ function navigateHeader(pageNumber) {
     }
 
     // Game Plans
+
+
+
     const gamePlans = [
         {
             name: "Arcade",
-            icon: "/images/icon-arcade.svg",
+            icon: arcadeImg,
             cost: `${formData.duration === "monthly" ? 9 : 90 }`  
         },
         {
             name: "Advanced",
-            icon: "/images/icon-advanced.svg",
+            icon: advancedImg,
             cost: `${formData.duration === "monthly" ? 12 : 120 }`  
         },
         {
             name: "Pro",
-            icon: "/images/icon-pro.svg",
+            icon: proImg,
             cost: `${formData.duration === "monthly" ? 15 : 150 }`  
         }
     ]
     
         // FORM SUBMISSION
         
-        // function handleSubmit(event) {
-        //     event.preventDefault();
-        //     const form = event.target
-        //     const data = new FormData(form)
+        function handleSubmit(event) {
+            event.preventDefault();
+            // const form = event.target
+            // const data = new FormData(form)
     
-        //     const submittedData = {}
-        //     for (let [key, value] of data.entries()){
-        //         submittedData[key] = value;
-        //     }
-        //     // console.log(submittedData);
+            // const submittedData = {}
+            // for (let [key, value] of data.entries()){
+            //     submittedData[key] = value;
+            // }
+            // console.log(submittedData);
             
-        // }
+        }
         
        const [submittedData, setSubmittedData] = useState(false)
 
@@ -221,7 +230,7 @@ function navigateHeader(pageNumber) {
         submittedData={submittedData}
         navigate={navigateHeader}
         />
-        <form >
+        <form onSubmit={handleSubmit}>
         {step === 1 && 
         <Step1
         error={errors}
