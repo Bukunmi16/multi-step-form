@@ -1,0 +1,843 @@
+/* STEP 1 */
+*{
+    font-family: "Ubuntu", serif;
+}
+
+body{
+    margin: 0;
+    background-color: hsl(228, 100%, 84%);
+}
+
+
+header{
+    width: 100vw;
+    height: 200px;
+    width: 100vw;
+    background-image: url('/images/bg-sidebar-mobile.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding-bottom: 100px;
+}
+
+.step-info{
+    display: none;
+}
+
+.page-number{
+    width: 50%;
+    min-width: 200px;
+    margin-top: 30px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.page-number button{
+    height: 100%;
+    border-radius: 50%;
+    width: 40px;
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.page-number button:hover{
+    background-color: hsl(228, 100%, 84%);
+    color: hsl(213, 96%, 18%);
+}
+
+.step1{
+    /* border: 1px solid red; */
+    width: 70%;
+    background-color: #fff;
+    margin-top: -90px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    padding-bottom: 20px;
+    align-self: center;
+}
+
+.step1 p{
+    color: hsl(231, 11%, 63%);
+    margin-bottom: 0;
+}
+
+.step1 h1{
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    height: 90%;
+}
+
+form label{
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+
+form input{
+    /* margin-bottom: 5px; */
+    height: 40px;
+    padding-left: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid hsl(231, 11%, 63%);
+    background-color: #fff;
+}
+
+form input:focus{
+    outline: none;
+}
+
+form input::placeholder{
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
+}
+
+
+
+.form-buttons{
+    display: flex;
+    /* border: 1px solid red; */
+    height: 40px;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.form-buttons button{
+    background-color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+
+.form-buttons .next{
+    background-color: hsl(213, 96%, 18%);
+    color: #fff;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.form-buttons .next:hover{
+    background-color: hsl(213, 45%, 38%);
+}
+
+.form-buttons .previous{
+    color: hsl(231, 11%, 63%);
+    margin-left: 10px;
+    transition: 0.3s;
+}   
+
+.form-buttons .previous:hover{
+    color: hsl(213, 96%, 18%);
+}
+
+.label-warning{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.required{
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* Hide spinner for Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinner for Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+input:focus{
+    border: 1px solid hsl(243, 100%, 62%);
+}
+
+.input-required{
+    border: 1px solid red;
+}
+
+@media screen and (min-width: 700px) {
+    #root{
+        /* border: 1px solid red; */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 15px;
+    }
+
+    main{
+        /* border: 1px solid black; */
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        /* width: 100%; */
+        height: 500px;
+        width: 1000px;
+        /* margin: 15px 15px; */
+        border-radius: 10px;
+        align-self: center;
+    }
+    
+    header{
+        /* border: 1px solid red; */
+        background-image: url('/images/bg-sidebar-desktop.svg');
+        height: 100%;
+        width: 45%;
+        display: flex;
+        background-size: cover;
+        background-position: left;
+        margin:0;
+        /* justify-content: start; */
+        align-items: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+    }
+    header .page-number{
+        /* border: 1px solid red; */
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;   
+        margin-top: 20px;     
+    }
+    .page-number button{
+        margin-top: 20px;
+        margin-left: 30px;
+        height: 40px;
+        width: 40px;
+    }
+    .step1{
+        /* border: 1px solid green; */
+        /* max-width: 100%; */
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        margin-top: 15px;
+    }
+    form{
+        padding: 0 70px;
+    }
+    form{
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+    .form-buttons{
+        /* border: 1px solid red; */
+        position: relative;
+        margin-top: 20px;
+        align-self: flex-end;
+    }
+    .form-buttons .next{
+        margin-right: 0;
+    }
+    .form-buttons .previous{
+        margin-left: 0;
+    }
+    form label{
+        margin-top: 10px;
+    }
+    .step1 p{
+        margin-top: 2px;
+    }
+    .step1 h1{
+        margin-top: 0px;
+    }
+
+    .step{
+        display: flex;
+        /* border: 1px solid red; */
+        width: 190px;
+        justify-content: space-between;      
+        align-items: end;
+    }
+    .step-info{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid red; */
+        justify-content: end;
+        margin-bottom: 7px;
+        height: 30px;
+        width: 100px;
+    }
+    .step-name{
+        font-size: 12px;
+        color: hsl(231, 11%, 63%);
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+    .action{
+        color: white;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }   
+    .step1 h1{
+        margin-top: 20px;
+    }
+}
+
+/* STEP 2 */
+
+.step2{
+    /* border: 1px solid red; */
+    padding: 20px;
+    margin-top: -90px;
+    background-color: #fff;
+    border-radius: 10px;
+    height: inherit;
+    justify-self: center ;
+}
+
+.step2 h1, .step2 p{
+    margin: 0;
+}
+.step2 h1{
+    color: hsl(213, 96%, 18%);
+    margin-top: 15px;
+}
+
+.step2 p{
+    color: hsl(231, 11%, 63%);
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.step2 .plans{
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step2 .plans button{
+    width: 100%;
+    display: flex;
+    /* height: 80px; */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    align-items: start;
+    border: 1px solid hsl(229, 18%, 81%);
+}
+
+.plan-details{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    /* height: 60px; */
+    align-items: start;
+    /* justify-content: space-around; */
+}
+
+.plan-details span{
+    margin-bottom: 5px;
+}
+
+.plan-details .plan-name{
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.plan-details .pricing{
+    font-size: 13px;
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+}
+
+.step2 .plans .selected-plan{
+    border: 1px solid hsl(213, 96%, 18%);
+}
+
+.plan-details .bonus{
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+/* SWITCH */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    transition: 0.4s;
+    border-radius: 25px;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: hsl(213, 96%, 18%);
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(24px);
+  }
+  
+  .duration{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* border: 1px solid red; */
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  hsl(229, 27%, 92%);
+  }
+
+  .duration span{
+    font-weight: 500;
+  }
+
+  .unselected{
+      color: green;
+    }
+  .unselected{
+    color: hsl(213, 96%, 18%);
+  }
+
+  .plan-required{
+    /* align-self: center; */
+    /* justify-self: center; */
+    color: red;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+@media screen and (min-width: 700px) {
+    .step2{
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .step2 .plans{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        /* justify-content: space-around; */
+        /* border: 1px solid red; */
+    }
+    .step2 .plans button{
+        height: 180px;
+        width: 150px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        /* border: 1px solid red; */
+    }
+    .step2 .plans .plan-details{
+        margin: 0;
+        /* border: 1px solid red; */
+    }
+    .slider::before{
+        left: 4px;
+    }
+    .slider{    
+        top: -5px;
+        height: 25px;
+
+    }
+}
+
+/* STEP 3 */
+.step3{
+    /* border: 1px solid red; */
+    width: 80%;
+    padding: 20px;
+    margin-top: -90px;
+    background-color: #fff;
+    border-radius: 10px;
+    height: inherit;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.step3 h1{
+    color: hsl(213, 96%, 18%);
+    margin: 0;
+    margin-top: 10px;
+}
+.step3 p{
+    margin: 15px 0;
+    /* border: 1px solid red; */
+    color: hsl(231, 11%, 63%);   
+}
+
+.add-on-elements{
+    border: 1px solid  hsl(232, 19%, 85%);
+    width: 100%;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 60px;
+    border-radius: 10px;
+    /* padding: 0 5px; */
+}
+
+
+.add-on-elements p {
+    /* border: 1px solid red; */
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color:  hsl(213, 96%, 18%); 
+}
+
+.add-on{
+    /* border: 1px solid red; */
+    width: 100%;
+    margin-left: 10px;
+    /* margin-bottom: 5px; */
+}
+
+.add-on-elements span{
+    font-size: 12px;
+}
+
+.cost-duration{
+    color: hsl(243, 100%, 62%);   
+}
+
+.add-on-description{
+    /* border: 1px solid red; */
+    height: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: hsl(231, 11%, 63%);
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.add-on-elements input{
+    margin-left: 15px;
+}
+
+.checked{
+    /* margin-left: 15px; */
+    border: 1px solid hsl(213, 96%, 18%); 
+}
+
+@media screen and (min-width: 700px) {
+    .step3{
+        margin-top: 0;
+        padding: 0;
+        /* border: 1px solid red; */
+        height: 100%;
+        width: 100%;
+    }
+    .step3 .form-buttons{
+        /* border: 1px solid red; */
+        margin-top: 0;
+    }
+    
+    .checkboxList{
+        /* border: 1px solid black; */
+        margin-top: 10px;
+    }
+    .add-on-elements{
+        /* border: 1px solid red; */
+        height: 70px;
+    }
+
+    .add-on-description p{
+        font-size: 15px;
+    }
+    span.cost-duration{
+        /* border: 1px solid red; */
+        width: 30%;
+        text-align: end;
+        margin-right: 30px;
+        font-size: 11px;
+    }    
+    .add-on-description{
+        margin-left: 15px;
+        /* margin-top: 3px; */
+    }
+    .add-on-elements input{
+        /* border: 1px solid red; */
+        /* display: none; */
+        width: 20px;
+        margin-left: 25px;
+    }
+}
+
+.step4{
+    padding: 30px;
+    margin-top: -90px;
+    background-color: #fff;
+    border-radius: 10px;
+    height: inherit;
+    justify-self: center ;   
+}
+
+.step4 h1{
+    color:  hsl(213, 96%, 18%);
+}
+.step4 p{
+    color: hsl(231, 11%, 63%);
+}
+
+.summary{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan-and-addOns{
+    padding: 20px;
+    padding-bottom: 0;
+    background-color: hsl(229, 24%, 87%);
+    border-radius: 10px;
+}
+
+.plan{
+    border-bottom: 1px solid hsl(231, 11%, 63%);
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plan-name{
+    display: flex;
+    flex-direction: column;
+    color:  hsl(213, 96%, 18%);
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.total{
+    padding: 10px 15px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.addOns{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;   
+    /* border: 1px solid red; */
+}
+
+.addOns span{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addOns p{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.plan-cost{
+    color:  hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+
+.edit-btn{
+    font-size: 15px;
+    margin-top: 3px;
+    width: 45px;
+    text-decoration: underline;
+    color: hsl(231, 11%, 63%);
+    /* border-bottom: 2px solid grey; */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-btn:hover{
+    color: hsl(243, 100%, 62%);
+}
+
+p.prices{
+    color:  hsl(213, 96%, 18%);
+    font-weight: 400;
+}
+
+.total{
+    color: hsl(231, 11%, 63%);
+}
+
+.total-cost{
+    font-weight: 600;
+    font-size: 17px;
+    color: hsl(243, 100%, 62%);
+}
+
+.total{
+    /* border: 1px solid red; */
+    margin-top: 15px;
+}
+
+button.confirm{
+    background-color: hsl(243, 100%, 62%);
+    padding: 0px 25px;
+    color: #fff;
+}
+button.confirm:hover{
+    background-color: hsl(243, 100%, 79%);
+}
+
+
+@media screen and (min-width: 700px) {
+    button.confirm{
+        background-color: hsl(243, 100%, 62%);
+        margin-right: 0px;
+        color: #fff;
+        padding: 0px 25px;
+    }
+    .step4{
+        margin-top: 0;
+        padding: 0;
+        /* border: 1px solid red; */
+        height: 100%;
+        width: 100%;
+    }
+    .step4 h1{
+        margin-bottom: 0;
+    }
+    .step4 .page-instruction{
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+.thank-you-section{
+    padding: 30px;
+    margin-top: -90px;
+    background-color: #fff;
+    border-radius: 10px;
+    height: inherit;
+    justify-self: center ; 
+    align-self: center;
+    width: 260px;
+}
+
+.thank-you-section div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.thank-you-section h1{
+    font-size: 30px;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 10px;
+}
+
+.thank-you-section p{
+    text-align: center;
+    /* border: 1px solid red; */
+    /* width: 80%; */
+    font-size: 15px;
+    color: hsl(231, 11%, 63%);
+    margin-top: 0;
+}
+
+
+@media screen and (min-width: 700px) {
+    .thank-you-section{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        /* border: 1px solid red; */
+    }
+    .thank-you-section div{
+        height: 100%;
+        /* border: 1px solid red; */
+    }
+    .thank-you-section p{
+        width: 400px;
+    }
+}
